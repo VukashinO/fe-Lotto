@@ -1,0 +1,18 @@
+<template>
+    <require from="styles/style.css"></require>
+        <header>
+            <nav class="navbar navbar-dark bg-dark fixed-top" id="mainNav">
+                    <a class="navbar-brand js-scroll-trigger" href="#page-top">LottoApp</a>
+                    <button if.bind="renderNav" class="navbar-toggler" type="button" data-toggle="dropdown" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation" click.trigger="onClick()">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="dropdown-menu dropdown-menu-right positionNavItems" class.bind="show ? 'show' : ''" id="collapsingNavbar">
+                    <button class="dropdown-item" type="button">${user}</button>
+                    <button class="dropdown-item" type="button">Ticket</button>
+                    <button if.bind="admin" class="dropdown-item" type="button" click.trigger="handleAdminPage()">Go To Admin Page</button>
+                    <div class="dropdown-divider"></div>
+                    <button click.trigger="signOut()" class="dropdown-item" type="button">Sign Out</button>
+                </div>
+            </nav>
+        </header>
+</template>

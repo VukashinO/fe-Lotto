@@ -1,0 +1,20 @@
+<template>
+  <require from="../ticket-list/ticket-list"></require>
+  <require from="header/header-nav-bar"></require>
+    
+  <header-nav-bar router.bind="router" class="header"></header-nav-bar>
+  <div class="mainBody">
+      <div class="row justify-content-center containerTicket">
+          <form class="col-10 formHeaderPos" submit.trigger="onCreateTicket()">
+              <h3>Create Ticket</h3>
+              <input class="ticket__inputs" type="number" repeat.for="number of numbers" value.bind="number.combination"/> 
+              <input type="submit" class="btn btn-primary btn-sm form__ButtonVerticalAlign" />
+          </form>
+      </div>
+      <div class="row justify-content-center containerTicket">
+          <div class="col-6">
+            <ticket-list></ticket-list>
+          </div>
+      </div>
+  </div>
+</template>
